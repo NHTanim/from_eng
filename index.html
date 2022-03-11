@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js"></script> -->
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="container">
+   <div class="header">
+     <h2>Create Account</h2>
+   </div>
+
+   <form action="" id="from">
+
+       <div class="from_control"> 
+          <label for="">User name</label>
+          <input type="text" name="" id="username" placeholder="user name">
+          <div id="username_error" class="error_color"></div>
+          <!-- <small>Error massage</small> -->
+       </div>
+
+
+       <div class="from_control"> 
+        <label for="">Email</label>
+        <input type="email" name="" id="email" placeholder="email">
+        <div id="email_error" class="error_color"></div>
+        <!-- <small>Error massage</small> -->
+     </div>
+
+
+     <div class="from_control"> 
+        <label for="">Password</label>
+        <input type="password" name="" id="password" placeholder="password">
+        <div id="password_error" class="error_color"></div>
+        <!-- <small>Error massage</small> -->
+     </div>
+
+
+     <div class="from_control"> 
+        <label for="">Password Check</label>
+        <input type="password" name="" id="password2" placeholder="re-password">
+        <div id="password_error2" class="error_color"></div>
+        <!-- <small>Error massage</small> -->
+     </div>
+     
+     <button type="submit" onclick=" return valid()">Submit</button>
+   </form>
+</div>
+
+
+
+
+
+<script>
+
+
+   // user name start;
+   var uname = document.getElementById('username');
+   var uerror = document.getElementById('username_error');
+   // user name end;
+
+
+   // email start;
+   var user_email = document.getElementById('email');
+   var user_emailerror = document.getElementById('email_error');
+   // email end;
+
+  
+
+   // password start;
+   var user_password = document.getElementById("password");
+   var user_passworderror = document.getElementById("password_error");
+   // password end;
+
+
+  // password2 start;
+  var user_password2 = document.getElementById("password2");
+   var user_passworderror2 = document.getElementById("password_error2");
+  // password2 end;
+
+function valid(){
+
+
+
+   // user name start;
+    if (uname.value == "") {
+      //   alert ('enter your username');
+      uname.style.border = "2px solid #e74c3c";
+      uerror.innerHTML = "User name cannot be blank";
+      uname.focus();
+      return false;
+    }
+
+    if (uname.value.length <=8) {
+       uname.style.border = "2px solid #e74c3c";
+       uerror.innerHTML = "User name must 8 characters";
+       uname.focus();
+       return false;
+    }
+
+    if (uname.value != "") {
+       uname.style.border = "2px solid #2ecc72";
+       uerror.innerHTML = " ";
+      //  return false;
+    }
+   //  user name end;
+   // ;
+
+
+
+
+
+
+
+
+
+   // email start ;
+   if (user_email.value == "") {
+      user_email.style.border = "2px solid #e74c3c";
+      user_emailerror.innerHTML = "Email cannot be blank";
+      user_email.focus();
+      return false;
+   }
+
+   // if (user_email.value != "") {
+      // user_email.style.border = "2px solid #e74c3c";
+      // user_emailerror.innerHTML = "Email is not valid";
+      // user_email.focus();
+      // return false;
+   // }
+   if (user_email.value != "") {
+      user_email.style.border = '2px solid #2ecc72';
+      user_emailerror.innerHTML =" ";
+      // return false;
+   }
+   // email end;
+
+
+
+
+
+
+
+
+
+   // password start;
+   if (user_password.value == "") {
+      user_password.style.border = "2px solid #e74c3c";
+      user_passworderror.innerHTML = "Password cannot be blank";
+      user_password.focus();
+      return false;
+   }
+   if (user_password.value.length <= 6) {
+      user_password.style.border = "2px solid #e74c3c";
+      user_passworderror.innerHTML = "Password must be longer than 6 characters";
+      user_password.focus();
+      return false;
+   }
+   if (user_password.value.length >= 20) {
+      user_password.style.border = "2px solid #e74c3c";
+      user_passworderror.innerHTML = "Password must be less than 20 characters";
+      user_password.focus();
+      return false;
+   }
+   if (user_password.value == "password") {
+      user_password.style.border = "2px solid #e74c3c";
+      user_passworderror.innerHTML = "Password cannot be password";
+      user_password.focus();
+      return false;
+   }
+   if (user_password.value != '') {
+      user_password.style.border = "2px solid #2ecc72";
+      user_passworderror.innerHTML = "";
+   }
+   // password end;
+
+
+
+
+
+
+
+   // password2 start;
+   if (user_password2.value == "") {
+      user_password2.style.border = "2px solid #e74c3c";
+      user_passworderror2.innerHTML = "re-password cannot be blank";
+      user_password2.focus();
+      return false;
+   }
+   if (user_password.value != user_password2.value) {
+          user_password.border = "2px solid red";
+          user_password2.style.border = "2px solid red";
+          user_passworderror2.innerHTML = "Password not match!"
+          user_password.focus();
+          return false;
+      }
+   // password2 end;
+}
+</script>
+
+</body>
+</html>
